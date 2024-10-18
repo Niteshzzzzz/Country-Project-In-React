@@ -19,7 +19,7 @@ const CountryDetail = () => {
             native: Object.values(data.name.nativeName || {})[0].common,
             population: data.population.toLocaleString('en-IN'),
             region: data.region,
-            subregion: data.subregion || {},
+            subregion: data.subregion ,
             capital: data.capital || {},
             tld: data.tld,
             currencies: Object.values(data.currencies || {}).map((currency) => currency.name).join(','),

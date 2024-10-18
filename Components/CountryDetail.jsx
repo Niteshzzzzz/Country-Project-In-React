@@ -13,7 +13,6 @@ const CountryDetail = () => {
     const [isDark] = useContext(ThemeContext)
 
     function udpdateCountryData(data){
-        console.log(data)
         setCountryData({
             name: data.name.common || data.name,
             flag: data.flags.svg,
@@ -70,7 +69,7 @@ const CountryDetail = () => {
                 <a href="" className="back"><i className="fa-solid fa-arrow-left-long" onClick={() => history.back()}></i><span>&#160;&#160;Back</span></a>
                 <div className="country-card">
                     <div className="image">
-                        <img  onerror="this.style.display='none'" className="im"></img>
+                        <img  onError={() => "this.style.display='none'"} className="im"></img>
                     </div>
                     <div className="content">
                         <h2 className="hii"></h2>

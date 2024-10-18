@@ -1,7 +1,7 @@
 
 const FilterBox = ({setQuery}) => {
     return (
-        <select className="filter-by-region" fdprocessedid="xqlzh"b onChange={(e) => { setQuery(e.target.value.toLowerCase() )}}>
+        <select className="filter-by-region" fdprocessedid="xqlzh" onChange={(e) => { setQuery(e.target.value.toLowerCase() )}}>
             <option value="Filter by Region" hidden>Filter by Region</option>
             <option value="Africa">Africa</option>
             <option value="Americas">Americas</option>

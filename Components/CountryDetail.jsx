@@ -1,7 +1,7 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import '../app.css'
 import { Link, useLocation, useParams } from "react-router-dom";
-import { ThemeContext } from "../contexts/ThemeContext.js";
+import { useTheme } from '../Hooks/useTheme';
 // import './Shimmer.css'
 
 const CountryDetail = () => {
@@ -10,7 +10,7 @@ const CountryDetail = () => {
     const countryName = Params.country; 
     const [counrtyData, setCountryData] = useState([]);
     const [failed, setFailed] = useState(false);
-    const [isDark] = useContext(ThemeContext)
+    const [isDark] = useTheme()
 
     function udpdateCountryData(data){
         setCountryData({
@@ -65,7 +65,7 @@ const CountryDetail = () => {
     }
     if (counrtyData.length === 0) {
         return (
-            <main className="main">
+            <main className={`main ${isDark ? 'dark' : ''}`}>
                 <a href="" className="back"><i className="fa-solid fa-arrow-left-long" onClick={() => history.back()}></i><span>&#160;&#160;Back</span></a>
                 <div className="country-card">
                     <div className="image">
